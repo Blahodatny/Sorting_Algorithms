@@ -1,0 +1,28 @@
+package assistant;
+
+import java.util.Random;
+
+public class ArrayAssistant {
+    public static void print(int[] a, String message) {
+        System.out.println(message);
+        for (int anA : a)
+            System.out.printf("% -5d", anA);
+        System.out.println();
+    }
+
+    public static void fillRandom(int[] a, int range) {
+        fillRandom(a, 0, range);
+    }
+
+    private static void fillRandom(int[] a, int from, int to) {
+        Random r = new Random();
+        for (int i = 0; i < a.length; i++)
+            a[i] = r.nextInt(to - from + 1) + from;
+    }
+
+    public static void swap(int[] ar, int i, int j) {
+        int temp = ar[i];
+        ar[i] = ar[j];
+        ar[j] = temp;
+    }
+}
