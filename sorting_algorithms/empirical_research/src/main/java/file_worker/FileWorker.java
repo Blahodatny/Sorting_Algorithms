@@ -1,6 +1,7 @@
 package file_worker;
 
 import java.io.*;
+import java.util.stream.IntStream;
 
 public class FileWorker {
     private void exists(String fileName) throws FileNotFoundException {
@@ -17,11 +18,11 @@ public class FileWorker {
                 System.out.println(file.createNewFile());
 
             try (PrintWriter out = new PrintWriter(file.getAbsoluteFile())) {
-                for (int i = 0; i < array.length; i++) {
+                IntStream.range(0, array.length).forEach(i -> {
                     out.print(array[i]);
                     if (i != array.length - 1)
                         out.print("\n");
-                }
+                });
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

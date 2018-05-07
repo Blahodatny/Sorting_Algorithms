@@ -4,6 +4,7 @@ import main.CSV;
 import main.Student;
 
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 
 import static main.task1.SelectionSort.selectionSort;
@@ -30,7 +31,6 @@ class SorterTask1 {
 
     private static void printStudents(Student[] studs) {
         if (studs == null || studs.length == 0) return;
-        for (Student stud : studs)
-            stud.print();
+        Arrays.stream(studs).forEach(Student::print);
     }
 }

@@ -1,9 +1,10 @@
 package recursion;
 
+import java.util.stream.IntStream;
+
 class Factorial {
     public static void main(String[] args) {
-        for (int n = 0; n <= 10; n++)
-            System.out.printf("%n%2d !  =  %d", n, fact(n));
+        IntStream.rangeClosed(0, 10).forEach(n -> System.out.printf("%n%2d !  =  %d", n, fact(n)));
     }
 
     private static long fact(int n) {

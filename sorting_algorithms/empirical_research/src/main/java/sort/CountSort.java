@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 public class CountSort {
     public static int[] countSort(int[] read) { // 2 4 2 1 9 5
         int[] array = new int[read.length];
@@ -18,8 +20,7 @@ public class CountSort {
 
         counts[0]--; // counts[9] = {0, 2, 0, 1, 1, 0, 0, 0, 1};
         // counts[0] == 0, counts[1] == 2
-        for (int i = 1; i < counts.length; i++)
-            counts[i] = counts[i] + counts[i - 1]; // counts[9] = {0, 2, 2, 3, 4, 4, 4, 4, 5};
+        Arrays.setAll(counts, i -> counts[i] + counts[i - 1]); // counts[9] = {0, 2, 2, 3, 4, 4, 4, 4, 5};
 
         // i == 5, read[i] == 5, counts[5 - 1]-- == 4, if was --(counts[read[i] - min]) it would equal 3
         for (int i = read.length - 1; i >= 0; i--)

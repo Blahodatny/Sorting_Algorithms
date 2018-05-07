@@ -1,5 +1,7 @@
 package main;
 
+import java.util.stream.IntStream;
+
 public class Student {
     private String name;
     private String surname;
@@ -10,10 +12,7 @@ public class Student {
     public static boolean isValidSurName(String string) {
         if (!Character.isUpperCase(string.charAt(0)))
             return false;
-        for (int i = 1; i < string.length(); i++)
-            if (!Character.isAlphabetic(string.charAt(i)))
-                return false;
-        return true;
+        return IntStream.range(1, string.length()).allMatch(i -> Character.isAlphabetic(string.charAt(i)));
     }
 
     public static boolean isValidForm(String form) {
