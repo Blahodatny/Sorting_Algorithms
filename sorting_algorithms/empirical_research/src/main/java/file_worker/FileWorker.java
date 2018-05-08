@@ -5,19 +5,19 @@ import java.util.stream.IntStream;
 
 public class FileWorker {
     private void exists(String fileName) throws FileNotFoundException {
-        File file = new File(fileName);
+        var file = new File(fileName);
         if (!file.exists())
             throw new FileNotFoundException(file.getName());
     }
 
     public void write(String fileName, int[] array) {
-        File file = new File(fileName);
+        var file = new File(fileName);
 
         try {
             if (!file.exists())
                 System.out.println(file.createNewFile());
 
-            try (PrintWriter out = new PrintWriter(file.getAbsoluteFile())) {
+            try (var out = new PrintWriter(file.getAbsoluteFile())) {
                 IntStream.range(0, array.length).forEach(i -> {
                     out.print(array[i]);
                     if (i != array.length - 1)
@@ -31,11 +31,11 @@ public class FileWorker {
 
     public int[] read(String fileName, int number) throws FileNotFoundException {
         exists(fileName);
-        int[] buffer = new int[number];
+        var buffer = new int[number];
         try {
-            try (BufferedReader in = new BufferedReader(new FileReader(new File(fileName)))) {
-                int i = 0;
-                String s = in.readLine();
+            try (var in = new BufferedReader(new FileReader(new File(fileName)))) {
+                var i = 0;
+                var s = in.readLine();
                 while (i < number) {
                     buffer[i] = Integer.parseInt(s);
                     s = in.readLine();

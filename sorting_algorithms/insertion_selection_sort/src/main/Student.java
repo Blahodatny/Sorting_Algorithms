@@ -77,7 +77,7 @@ public class Student {
         if (head == null)
             head = addFirst(null, node);
         else {
-            Student tail = head;
+            var tail = head;
             if (tail.next != null)
                 while (tail.next != null)
                     tail = tail.next;
@@ -87,7 +87,7 @@ public class Student {
     }
 
     public static Student deleteNode(Student dlHead, Student cur) {
-        Student temp = dlHead;
+        var temp = dlHead;
         while (temp != cur)
             temp = temp.next;
 

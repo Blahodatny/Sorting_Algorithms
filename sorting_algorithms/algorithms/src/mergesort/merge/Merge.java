@@ -4,10 +4,10 @@ import java.util.stream.IntStream;
 
 class Merge {
     static void merge(int arr[], int l, int m, int r) {
-        int n1 = m - l + 1;
-        int n2 = r - m;
+        var n1 = m - l + 1;
+        var n2 = r - m;
 
-        int[] leftArray = new int[n1];
+        var leftArray = new int[n1];
         int[] rightArray;
 
         // copy from left subarray

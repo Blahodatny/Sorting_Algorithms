@@ -17,7 +17,7 @@ class BasicQuickSort {
 
     private static void quickSort(int[] ar, int lo, int hi) {
         if (lo < hi) {
-            int q = partition(ar, lo, hi);
+            var q = partition(ar, lo, hi);
             quickSort(ar, lo, q - 1);
             quickSort(ar, q + 1, hi);
         }

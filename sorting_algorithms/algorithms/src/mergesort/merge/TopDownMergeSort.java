@@ -11,7 +11,7 @@ public class TopDownMergeSort {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[N];
+        var arr = new int[N];
         ArrayAssistant.fillRandom(arr, 1000);
         ArrayAssistant.print(arr, "Before sorting");
 
@@ -32,7 +32,7 @@ public class TopDownMergeSort {
 
     public static void mergeSort(int a[], int l, int r) {
         if (l < r) {
-            int m = (l + r) / 2;
+            var m = (l + r) / 2;
             mergeSort(a, l, m);
             mergeSort(a, m + 1, r);
             merge(a, l, m, r);
@@ -42,18 +42,18 @@ public class TopDownMergeSort {
     private static int[] mergeSort2(int a[]) {
         if (a.length > 1) {
             // Split the array in half in two parts
-            int[] b = Arrays.copyOfRange(a, 0, a.length / 2);
-            int[] c = Arrays.copyOfRange(a, b.length, a.length);
+            var b = Arrays.copyOfRange(a, 0, a.length / 2);
+            var c = Arrays.copyOfRange(a, b.length, a.length);
             return twoWayMerge(mergeSort2(b), mergeSort2(c));
         } else
             return a;
     }
 
-    static int[] twoWayMerge(int[] leftArray, int[] rightArray) {
-        int iLeft = 0;
-        int iRight = 0;
-        int iResult = 0;
-        int[] result = new int[leftArray.length + rightArray.length];
+    private static int[] twoWayMerge(int[] leftArray, int[] rightArray) {
+        var iLeft = 0;
+        var iRight = 0;
+        var iResult = 0;
+        var result = new int[leftArray.length + rightArray.length];
         while (iLeft < leftArray.length && iRight < rightArray.length)
             if (leftArray[iLeft] <= rightArray[iRight])
                 result[iResult++] = leftArray[iLeft++];

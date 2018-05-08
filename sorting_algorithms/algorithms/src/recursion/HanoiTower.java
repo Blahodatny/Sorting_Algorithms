@@ -2,7 +2,7 @@ package recursion;
 
 class HanoiTower {
     public static void main(String[] args) {
-        int n = 3;
+        var n = 3;
         hanoi(n, 1, 2, 3);
     }
 

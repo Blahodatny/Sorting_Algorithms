@@ -12,26 +12,26 @@ class Sort {
     private static final int QUANTITY = 6;
 
     public static void main(String args[]) throws IOException {
-        FileWorker fa = new FileWorker();
+        var fa = new FileWorker();
         int[] array;
-        double[] timeCount = new double[QUANTITY];
-        double[] timeInsert = new double[QUANTITY];
-        double[] averageTimeCount = new double[QUANTITY];
-        double[] averageTimeInsert = new double[QUANTITY];
-        final Random random = new Random();
+        var timeCount = new double[QUANTITY];
+        var timeInsert = new double[QUANTITY];
+        var averageTimeCount = new double[QUANTITY];
+        var averageTimeInsert = new double[QUANTITY];
+        final var random = new Random();
 
-        int min = 10000;
-        for (int i = 0; i < QUANTITY; i++) {
-            for (int j = 0; j < QUANTITY; j++) {
+        var min = 10000;
+        for (var i = 0; i < QUANTITY; i++) {
+            for (var j = 0; j < QUANTITY; j++) {
 
-                int[] buffer = new int[SIZE];
-                for (int k = 0; k < min; k++)
+                var buffer = new int[SIZE];
+                for (var k = 0; k < min; k++)
                     buffer[k] = random.nextInt(100);
                 fa.write(currentDir, buffer);
 
                 array = fa.read(currentDir, min);
 
-                long startTime = System.nanoTime();
+                var startTime = System.nanoTime();
                 System.out.println(countSort(array)[0]);
                 timeCount[j] = (double) (System.nanoTime() - startTime) / 1000000000;
 

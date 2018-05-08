@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 class ShowFiles {
     private static void printFileNames(String path) {
-        File[] files = new File(path).listFiles();
+        var files = new File(path).listFiles();
         assert files != null;
         Arrays.stream(files).forEach(f -> {
             if (f.isDirectory()) {

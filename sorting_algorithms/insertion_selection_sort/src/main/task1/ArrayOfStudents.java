@@ -7,10 +7,10 @@ import java.util.List;
 
 class ArrayOfStudents {
     static Student[] create(List<String[]> list) {
-        int numStudents = 0;
-        Student[] students = new Student[list.size()];
+        var numStudents = 0;
+        var students = new Student[list.size()];
 
-        for (String[] line : list) {
+        for (var line : list) {
             students[numStudents] = new Student();
             numStudents += writeStudInfo(students[numStudents], line);
         }
@@ -22,7 +22,7 @@ class ArrayOfStudents {
     }
 
     private static Student[] copyOf(Student[] students, int numStudents) {
-        Student[] buf_students = new Student[numStudents];
+        var buf_students = new Student[numStudents];
         System.arraycopy(students, 0, buf_students, 0, numStudents);
         return buf_students;
     }

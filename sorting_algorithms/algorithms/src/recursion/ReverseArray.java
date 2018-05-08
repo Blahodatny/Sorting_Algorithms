@@ -6,7 +6,7 @@ class ReverseArray {
     private static final int N = 10;
 
     public static void main(String[] args) {
-        int[] ar = new int[N];
+        var ar = new int[N];
         ArrayAssistant.fillRandom(ar, 100);
         ArrayAssistant.print(ar, "Initial array: ");
 
@@ -22,7 +22,7 @@ class ReverseArray {
     private static void reverse(int[] array, Method m) {
         switch (m) {
             case Iterative:
-                int size = array.length;
+                var size = array.length;
                 for (int i = 0, mid = size >> 1, j = size - 1; i < mid; i++, j--)
                     ArrayAssistant.swap(array, i, j);
                 break;

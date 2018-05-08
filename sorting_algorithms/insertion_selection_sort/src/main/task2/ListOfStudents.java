@@ -10,7 +10,7 @@ import static main.Student.addNode;
 class ListOfStudents {
     static Student create(List<String[]> list) {
         Student head = null;
-        for (String[] line : list)
+        for (var line : list)
             head = addNode(head, writeStudInfo(line));
         return head;
     }
@@ -25,7 +25,7 @@ class ListOfStudents {
         if (Student.isValidSurName(line[0].trim()) &&
                 Student.isValidSurName(line[1].trim()) &&
                 Student.isValidForm(line[2].trim())) {
-            Student student = new Student();
+            var student = new Student();
             student.setName(line[0].trim());
             student.setSurname(line[1].trim());
             student.setForm(line[2].trim());

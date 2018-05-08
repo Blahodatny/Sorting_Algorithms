@@ -19,17 +19,17 @@ class RandomizedQuickSort {
     }
 
     private static int rand(int lo, int hi) {
-        Random rn = new Random();
-        int n = hi - lo + 1;
-        int i = rn.nextInt(n);
+        var rn = new Random();
+        var n = hi - lo + 1;
+        var i = rn.nextInt(n);
         return lo + i;
     }
 
     private static void quickSort(int[] ar, int lo, int hi) {
         if (lo < hi) {
-            int iPivot = rand(lo, hi);
+            var iPivot = rand(lo, hi);
             ArrayAssistant.swap(ar, iPivot, hi);
-            int q = partition(ar, lo, hi);
+            var q = partition(ar, lo, hi);
             System.out.println("q =  " + q);
             quickSort(ar, lo, q - 1);
             quickSort(ar, q + 1, hi);

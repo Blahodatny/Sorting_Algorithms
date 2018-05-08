@@ -25,9 +25,9 @@ class HoareQuickSort {
 
     // Hoare Partition
     private static int partition(int[] ar, int p, int r) {
-        int pivot = ar[p];
-        int left = p - 1;
-        int right = r + 1;
+        var pivot = ar[p];
+        var left = p - 1;
+        var right = r + 1;
 
         while (true) {
             // decrement the r pointer until you meet the pivot
@@ -45,9 +45,9 @@ class HoareQuickSort {
 
     // Hoare Improved Partition
     public static int partitionImpr(int[] ar, int p, int r) {
-        int pivot = ar[p];
-        int left = p;
-        int right = r + 1;
+        var pivot = ar[p];
+        var left = p;
+        var right = r + 1;
 
         while (true) {
             // decrement the r pointer until you meet the pivot

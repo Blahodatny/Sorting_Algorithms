@@ -8,7 +8,7 @@ class BottomUpMergeSort {
     private final static int N = 20;
 
     public static void main(String[] args) {
-        int[] arr = new int[N];
+        var arr = new int[N];
         ArrayAssistant.fillRandom(arr, 100);
         ArrayAssistant.print(arr, "Before merging");
         bottomUpMergeSort(arr);
@@ -17,12 +17,12 @@ class BottomUpMergeSort {
 
     // Bottom-up merge sort
     private static void bottomUpMergeSort(int[] array) {
-        int step = 1;
+        var step = 1;
         while (step < array.length) {
-            int l = 0;
+            var l = 0;
             while (l < array.length - step) {
-                int m = l + step - 1;
-                int r = (l + 2 * step - 1) < (array.length - 1) ?
+                var m = l + step - 1;
+                var r = (l + 2 * step - 1) < (array.length - 1) ?
                         (l + 2 * step - 1) : array.length - 1;
                 merge(array, l, m, r);
                 l += step * 2;

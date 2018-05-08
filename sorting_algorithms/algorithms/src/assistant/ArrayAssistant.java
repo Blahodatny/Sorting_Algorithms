@@ -15,12 +15,12 @@ public class ArrayAssistant {
     }
 
     private static void fillRandom(int[] a, int from, int to) {
-        Random r = new Random();
+        var r = new Random();
         Arrays.setAll(a, i -> r.nextInt(to - from + 1) + from);
     }
 
     public static void swap(int[] ar, int i, int j) {
-        int temp = ar[i];
+        var temp = ar[i];
         ar[i] = ar[j];
         ar[j] = temp;
     }

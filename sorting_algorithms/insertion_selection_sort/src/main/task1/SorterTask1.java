@@ -5,7 +5,6 @@ import main.Student;
 
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.List;
 
 import static main.task1.SelectionSort.selectionSort;
 
@@ -13,7 +12,7 @@ class SorterTask1 {
     private static String currentDir = System.getProperty("user.dir") + "/insertion_selection_sort/data";
 
     public static void main(String[] args) {
-        List<String[]> list = CSV.readCSV(
+        var list = CSV.readCSV(
                 Paths.get(currentDir, "students.csv").toString());
 
         assert list != null;
