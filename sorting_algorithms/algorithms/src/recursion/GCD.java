@@ -9,9 +9,6 @@ class GCD {
     }
 
     private static int gdc(int a, int b) {
-        if (b == 0)
-            return a;
-        else
-            return gdc(b, a % b);
+        return b == 0 ? a : gdc(b, a % b);
     }
 }

@@ -10,9 +10,7 @@ public class Student {
     private Student next;
 
     public static boolean isValidSurName(String string) {
-        if (!Character.isUpperCase(string.charAt(0)))
-            return false;
-        return IntStream.range(1, string.length()).allMatch(i -> Character.isAlphabetic(string.charAt(i)));
+        return Character.isUpperCase(string.charAt(0)) && IntStream.range(1, string.length()).allMatch(i -> Character.isAlphabetic(string.charAt(i)));
     }
 
     public static boolean isValidForm(String form) {

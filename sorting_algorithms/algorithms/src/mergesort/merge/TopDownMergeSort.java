@@ -55,10 +55,7 @@ public class TopDownMergeSort {
         var iResult = 0;
         var result = new int[leftArray.length + rightArray.length];
         while (iLeft < leftArray.length && iRight < rightArray.length)
-            if (leftArray[iLeft] <= rightArray[iRight])
-                result[iResult++] = leftArray[iLeft++];
-            else
-                result[iResult++] = rightArray[iRight++];
+            result[iResult++] = leftArray[iLeft] <= rightArray[iRight] ? leftArray[iLeft++] : rightArray[iRight++];
         System.arraycopy(leftArray, iLeft, result, iResult, leftArray.length - iLeft);
         System.arraycopy(rightArray, iRight, result, iResult, rightArray.length - iRight);
         return result;

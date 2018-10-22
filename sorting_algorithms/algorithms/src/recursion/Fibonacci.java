@@ -8,9 +8,7 @@ class Fibonacci {
     }
 
     private static int fibonacci(int n) {
-        if (n == 0 || n == 1)
-            return n; // base cases
-        else
-            return fibonacci(n - 1) + fibonacci(n - 2); // recursive step
+        // recursive step
+        return n == 0 || n == 1 ? n : fibonacci(n - 1) + fibonacci(n - 2); // base cases
     }
 }

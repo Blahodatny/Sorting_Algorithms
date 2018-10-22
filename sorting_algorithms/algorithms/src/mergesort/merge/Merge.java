@@ -26,10 +26,7 @@ class Merge {
                 continue;
             }
 
-            if (leftArray[i] <= rightArray[j])
-                arr[k] = leftArray[i++];
-            else
-                arr[k] = rightArray[j++];
+            arr[k] = leftArray[i] <= rightArray[j] ? leftArray[i++] : rightArray[j++];
         }
     }
 }

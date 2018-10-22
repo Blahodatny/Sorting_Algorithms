@@ -48,10 +48,7 @@ class Merging {
                 continue;
             }
 
-            if (leftArray[i] <= rightArray[j])
-                result[k] = leftArray[i++];
-            else
-                result[k] = rightArray[j++];
+            result[k] = leftArray[i] <= rightArray[j] ? leftArray[i++] : rightArray[j++];
         }
         return result;
     }
@@ -70,10 +67,7 @@ class Merging {
         i = 0;
         j = aux.length - 1;
         for (k = 0; k < aux.length; k++)
-            if (aux[j] < aux[i])
-                a[k] = aux[j--];
-            else
-                a[k] = aux[i++];
+            a[k] = aux[j] < aux[i] ? aux[j--] : aux[i++];
         return a;
     }
 }
