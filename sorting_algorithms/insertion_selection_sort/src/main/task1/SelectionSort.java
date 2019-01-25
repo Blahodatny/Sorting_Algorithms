@@ -14,8 +14,8 @@ public class SelectionSort {
     }
 
     public static int compare(Student s1, Student s2) {
-        char surname1[] = s1.getSurname().toCharArray();
-        char name1[] = s1.getName().toCharArray();
+        var surname1 = s1.getSurname().toCharArray();
+        char[] name1 = s1.getName().toCharArray();
         char surname2[] = s2.getSurname().toCharArray();
         char name2[] = s2.getName().toCharArray();
         var pos = 0;

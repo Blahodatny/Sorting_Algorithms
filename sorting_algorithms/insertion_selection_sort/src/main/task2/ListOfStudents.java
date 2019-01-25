@@ -16,7 +16,7 @@ class ListOfStudents {
     }
 
     private static Student writeStudInfo(String[] line) {
-        if (line.length != (new Student()).getClass().getDeclaredFields().length - 2) {
+        if (line.length != Student.class.getDeclaredFields().length - 2) {
             System.err.println("Error: the line  \"" + Arrays.toString(line)
                     + "\" not completed");
             return null;
