@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3614180-f641-46f7-aafe-898a61d7c5ff" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../sort/src/main/java/helpers/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sort/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sort/src/main/java/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/src/main/java/helpers/Converter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sort/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sort/src/main/java/csv/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/src/main/java/helpers/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sort/src/main/java/helpers/Converter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../sort/src/main/java/sort/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/src/main/java/sort/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sort/src/main/java/student/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/src/main/java/student/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sort/src/main/java/student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/src/main/java/student/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sort/src/main/java/student/StudentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sort/src/main/java/student/StudentList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/empirical_research/target/" />
@@ -28,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="-308">
+              <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
               <folding>
                 <element signature="e#586#587#0" expanded="true" />
                 <element signature="e#683#684#0" expanded="true" />
@@ -44,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task1/SelectionSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            <state relative-caret-position="420">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -68,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task1/SorterTask1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            <state relative-caret-position="728">
+              <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -80,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task2/InsertionSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+            <state relative-caret-position="392">
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -146,11 +148,11 @@
         <option value="$PROJECT_DIR$/algorithms/src/recursion/GCD.java" />
         <option value="$PROJECT_DIR$/empirical_research/pom.xml" />
         <option value="$PROJECT_DIR$/empirical_research/src/main/java/file_worker/FileWorker.java" />
-        <option value="$PROJECT_DIR$/insertion_selection_sort/src/main/Student.java" />
         <option value="$PROJECT_DIR$/empirical_research/src/main/java/sort/CountSort.java" />
         <option value="$PROJECT_DIR$/insertion_selection_sort/src/main/task1/SelectionSort.java" />
         <option value="$PROJECT_DIR$/insertion_selection_sort/src/main/task2/ListOfStudents.java" />
         <option value="$PROJECT_DIR$/insertion_selection_sort/src/main/task1/ArrayOfStudents.java" />
+        <option value="$PROJECT_DIR$/insertion_selection_sort/src/main/Student.java" />
       </list>
     </option>
   </component>
@@ -177,7 +179,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1910" />
     <option name="height" value="1053" />
@@ -231,8 +233,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Course" />
     </panes>
   </component>
@@ -242,7 +244,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548527141609" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548537251139" />
     <property name="jdk.selected.JAVA_MODULE" value="10" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sort" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -387,18 +389,19 @@
       <workItem from="1540244174688" duration="129000" />
       <workItem from="1540244359383" duration="766000" />
       <workItem from="1540299366139" duration="43000" />
-      <workItem from="1548517465861" duration="7550000" />
+      <workItem from="1548517465861" duration="13600000" />
+      <workItem from="1548537441725" duration="770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17950000" />
+    <option name="totallyTimeSpent" value="24770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17395945" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17609392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -406,11 +409,9 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Learn" order="7" />
-      <window_info anchor="bottom" id="SQL" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32910052" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3133188" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18834081" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -423,6 +424,8 @@
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="ANTLR Preview" order="13" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="14" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="SQL" order="16" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -637,10 +640,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task1/SelectionSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task1/ArrayOfStudents.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task1/SorterTask1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -651,6 +668,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task2/InsertionSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task2/ListOfStudents.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -658,35 +682,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task1/SelectionSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task2/InsertionSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="-308">
+          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
           <folding>
             <element signature="e#586#587#0" expanded="true" />
             <element signature="e#683#684#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insertion_selection_sort/src/main/task1/SorterTask1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
         </state>
       </provider>
     </entry>

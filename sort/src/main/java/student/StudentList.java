@@ -1,71 +1,34 @@
 package student;
 
 public class StudentList {
-    private Node first;
-    private Node last;
-
-    public StudentList() {
+    public static Node addFirst(Node head, Student value) {
+        final var newNode = new Node(null, value, head);
+        if (head != null)
+            head.prev = newNode;
+        return newNode;
     }
 
-    public void addFirst(Student student) {
-        final var f = first;
-        final var newNode = new Node(null, student, f);
-        first = newNode;
-        if (f == null)
-            last = newNode;
-        else
-            f.prev = newNode;
+    public static void addAfter(Node node, Student value) {
+        final var newNode = new Node(node, value, node.next);
+        if (node.next != null)
+            node.next.prev = newNode;
+        node.next = newNode;
     }
 
-    private void addLast(Student student) {
-        final var l = last;
-        final var newNode = new Node(l, student, null);
-        last = newNode;
-        if (l == null)
-            first = newNode;
-        else
-            l.next = newNode;
-    }
-
-    public boolean add(Student student) {
-        addLast(student);
-        return true;
-    }
-
-    public boolean remove(Object o) {
-        if (o == null) {
-            for (var x = first; x != null; x = x.next)
-                if (x.item == null) {
-                    unlink(x);
-                    return true;
-                }
-        } else
-            for (var x = first; x != null; x = x.next)
-                if (o.equals(x.item)) {
-                    unlink(x);
-                    return true;
-                }
-        return false;
-    }
-
-    private void unlink(Node x) {
-        final var next = x.next;
-        final var prev = x.prev;
-
-        if (prev == null)
-            first = next;
-        else {
-            prev.next = next;
-            x.prev = null;
+    public static Node remove(Node head, Student value) {
+        if (head == null) return null;
+        var tail = head;
+        while (tail.item != value) {
+            tail = tail.next;
+            if (tail == null)
+                return null;
         }
 
-        if (next == null)
-            last = prev;
-        else {
-            next.prev = prev;
-            x.next = null;
-        }
+        if (tail.prev != null)
+            tail.prev.next = tail.next;
 
-        x.item = null;
+        if (tail.next != null)
+            tail.next.prev = tail.prev;
+        return head == tail ? head.next : head;
     }
 }

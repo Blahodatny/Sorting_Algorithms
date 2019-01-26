@@ -1,6 +1,7 @@
 package student;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.IntStream;
 
@@ -35,24 +36,42 @@ public class Student {
     }
 
     public int compare(Student student) {
-        var pos = 0;
         if (form.equals("budget") && student.form.equals("contract"))
             return 1;
         else if (student.form.equals("budget") && form.equals("contract"))
             return -1;
         else {
-            while (pos != surname.length() && pos != student.surname.length()
-                    || pos != name.length() && pos != student.name.length())
-                if (surname.charAt(pos) < student.surname.charAt(pos)
-                        || name.charAt(pos) < student.name.charAt(pos))
+            var pos = 0;
+            var temp1 = surname.toCharArray();
+            var temp2 = student.surname.toCharArray();
+            while (pos != temp1.length && pos != temp2.length)
+                if (temp1[pos] < temp2[pos])
                     return 1;
-                else if (surname.charAt(pos) > student.surname.charAt(pos)
-                        || name.charAt(pos) > student.name.charAt(pos))
+                else if (temp1[pos] > temp2[pos])
                     return -1;
-                else
+                else {
                     pos++;
+                    if (pos == temp1.length && pos == temp2.length) {
+                        temp1 = name.toCharArray();
+                        temp2 = student.name.toCharArray();
+                        pos = 0;
+                    }
+                }
             return 0;
         }
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        var student = (Student) o;
+        return name.equals(student.name) &&
+                surname.equals(student.surname) &&
+                form.equals(student.form);
+    }
+
+    public int hashCode() {
+        return Objects.hash(name, surname, form);
     }
 
     public String toString() {
