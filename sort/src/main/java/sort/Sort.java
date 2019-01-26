@@ -3,7 +3,7 @@ package sort;
 import student.Student;
 
 public class Sort {
-    static void selection(Student[] students) {
+    public static void selection(Student[] students) {
         for (var min = 0; min < students.length - 1; min++) {
             var least = min;
             for (var j = min + 1; j < students.length; j++)

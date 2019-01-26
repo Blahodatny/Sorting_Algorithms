@@ -10,7 +10,7 @@ public class Student {
     private String form;
 
     public Student(String[] info) {
-        if (info.length <= this.getClass().getDeclaredFields().length)
+        if (info.length < this.getClass().getDeclaredFields().length)
             throw new IllegalArgumentException(
                     "The line  \"" + Arrays.toString(info) + "\" not completed"
             );
@@ -53,5 +53,9 @@ public class Student {
                     pos++;
             return 0;
         }
+    }
+
+    public String toString() {
+        return String.format("%-10s|   %-15s|  %-10s|", name, surname, form);
     }
 }
