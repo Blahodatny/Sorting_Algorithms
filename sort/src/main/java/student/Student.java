@@ -33,4 +33,25 @@ public class Student {
     private static boolean isValidForm(String form) {
         return Set.of("budget", "contract").contains(form);
     }
+
+    public int compare(Student student) {
+        var pos = 0;
+        if (form.equals("budget") && student.form.equals("contract"))
+            return 1;
+        else if (student.form.equals("budget") && form.equals("contract"))
+            return -1;
+        else {
+            while (pos != surname.length() && pos != student.surname.length()
+                    || pos != name.length() && pos != student.name.length())
+                if (surname.charAt(pos) < student.surname.charAt(pos)
+                        || name.charAt(pos) < student.name.charAt(pos))
+                    return 1;
+                else if (surname.charAt(pos) > student.surname.charAt(pos)
+                        || name.charAt(pos) > student.name.charAt(pos))
+                    return -1;
+                else
+                    pos++;
+            return 0;
+        }
+    }
 }

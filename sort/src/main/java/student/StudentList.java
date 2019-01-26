@@ -4,6 +4,9 @@ public class StudentList {
     private Node first;
     private Node last;
 
+    public StudentList() {
+    }
+
     public void addFirst(Student student) {
         final var f = first;
         final var newNode = new Node(null, student, f);
@@ -14,7 +17,7 @@ public class StudentList {
             f.prev = newNode;
     }
 
-    public void addLast(Student student) {
+    private void addLast(Student student) {
         final var l = last;
         final var newNode = new Node(l, student, null);
         last = newNode;
@@ -22,6 +25,11 @@ public class StudentList {
             first = newNode;
         else
             l.next = newNode;
+    }
+
+    public boolean add(Student student) {
+        addLast(student);
+        return true;
     }
 
     public boolean remove(Object o) {
@@ -44,13 +52,15 @@ public class StudentList {
         final var next = x.next;
         final var prev = x.prev;
 
-        if (prev == null) first = next;
+        if (prev == null)
+            first = next;
         else {
             prev.next = next;
             x.prev = null;
         }
 
-        if (next == null) last = prev;
+        if (next == null)
+            last = prev;
         else {
             next.prev = prev;
             x.next = null;
