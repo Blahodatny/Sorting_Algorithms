@@ -11,7 +11,7 @@ public class Student {
     private String form;
 
     public Student(String[] info) {
-        if (info.length < this.getClass().getDeclaredFields().length)
+        if (info.length < getClass().getDeclaredFields().length)
             throw new IllegalArgumentException(
                     "The line  \"" + Arrays.toString(info) + "\" not completed"
             );
@@ -51,7 +51,10 @@ public class Student {
                     return -1;
                 else {
                     pos++;
-                    if (pos == temp1.length && pos == temp2.length) {
+                    if (pos == temp1.length
+                            && pos == temp2.length
+                            && temp1 == surname.toCharArray()
+                    ) {
                         temp1 = name.toCharArray();
                         temp2 = student.name.toCharArray();
                         pos = 0;
