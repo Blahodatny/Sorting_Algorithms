@@ -8,13 +8,13 @@ import static student.StudentList.remove;
 
 public class Sort {
     public static void selection(Student[] students) {
-        for (var min = 0; min < students.length - 1; min++) {
-            var least = min;
-            for (var j = min + 1; j < students.length; j++)
-                if (students[j].compare(students[least]) == 1)
-                    least = j;
-            if (least != min)
-                swap(students, min, least);
+        for (var i = 0; i < students.length - 1; i++) {
+            var min = i;
+            for (var j = i + 1; j < students.length; j++)
+                if (students[j].compare(students[min]) == 1)
+                    min = j;
+            if (min != i)
+                swap(students, i, min);
         }
     }
 

@@ -50,8 +50,7 @@ public class Student {
                 else if (temp1[pos] > temp2[pos])
                     return -1;
                 else {
-                    pos++;
-                    if (pos == temp1.length
+                    if (++pos == temp1.length
                             && pos == temp2.length
                             && temp1 == surname.toCharArray()
                     ) {
