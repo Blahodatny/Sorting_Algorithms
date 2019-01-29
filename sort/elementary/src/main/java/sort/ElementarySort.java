@@ -55,7 +55,6 @@ class ElementarySort {
                 break;
             case 3:
                 selection(array);
-                break;
         }
         System.out.println(Arrays.toString(array));
     }
