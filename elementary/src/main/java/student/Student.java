@@ -49,15 +49,13 @@ public class Student {
                     return 1;
                 else if (temp1[pos] > temp2[pos])
                     return -1;
-                else {
-                    if (++pos == temp1.length
-                            && pos == temp2.length
-                            && temp1 == surname.toCharArray()
-                    ) {
-                        temp1 = name.toCharArray();
-                        temp2 = student.name.toCharArray();
-                        pos = 0;
-                    }
+                else if (++pos == temp1.length
+                        && pos == temp2.length
+                        && temp1 == surname.toCharArray()
+                ) {
+                    temp1 = name.toCharArray();
+                    temp2 = student.name.toCharArray();
+                    pos = 0;
                 }
             return 0;
         }

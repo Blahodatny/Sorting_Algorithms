@@ -39,6 +39,8 @@ public class Analysis {
             min = 10000;
         }
 
+        System.out.println(Arrays.deepToString(time));
+
         for (var i = 0; i < algorithms.size(); i++)
             for (var j = 0; j < repeat; j++) {
                 for (var k = 0; k < repeat; k++)
