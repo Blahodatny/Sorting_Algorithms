@@ -7,13 +7,9 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-import static java.util.Objects.requireNonNull;
-
 public class FileWorker {
     private File getFile(String file) {
-        return new File(requireNonNull(
-                getClass().getClassLoader().getResource(file)
-        ).getFile());
+        return new File("./research/src/main/resources/" + file);
     }
 
     public void write(String file, int[] array) {
@@ -33,6 +29,7 @@ public class FileWorker {
             var i = 0;
             while (scanner.hasNext())
                 array[i++] = scanner.nextInt();
+            scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
