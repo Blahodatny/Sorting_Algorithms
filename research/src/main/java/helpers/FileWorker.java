@@ -4,35 +4,38 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Scanner;
 
 import static java.util.Objects.requireNonNull;
 
 public class FileWorker {
     private File getFile(String file) throws FileNotFoundException {
         return new File(requireNonNull(
-                getClass().getClassLoader().getResource("data/" + file)
+                getClass().getClassLoader().getResource(file)
         ).getFile());
     }
 
-    private void close(FileOutputStream stream) {
+    public void write(String file, int[] array) {
         try {
-            requireNonNull(stream).close();
-        }
-        catch (IOException e) {
+            var stream = new FileOutputStream(getFile(file));
+            for (var i : array)
+                stream.write(i);
+            stream.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void write(String file, int[] array) {
-        FileOutputStream stream = null;
+    public int[] read(String file, int length) {
+        var array = new int[length];
         try {
-            stream = new FileOutputStream(getFile(file));
-            for (var i1 : array) stream.write(i1);
-        } catch (IOException e) {
+            var scanner = new Scanner(getFile(file));
+            var i = 0;
+            while (scanner.hasNext())
+                array[i++] = scanner.nextInt();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        finally {
-            close(stream);
-        }
+        return array;
     }
 }
