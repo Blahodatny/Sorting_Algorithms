@@ -1,10 +1,12 @@
-import helpers.FileWorker;
+import analysis.Analysis;
+import sort.ShellSort;
 
 import java.util.Arrays;
 
 public class Main {
     public static void main(String... args) {
-        new FileWorker().write("data.txt", new int[]{89, 67, 45});
-        System.out.println(Arrays.toString(new FileWorker().read("data.txt", 3)));
+        var array = Analysis.analyze(Arrays.asList(ShellSort::classic, ShellSort::knuth), 3, 100000);
+            for (int j = 0; j < 3; j++)
+                System.out.println("Average time of Classic: " + array[0][j]);
     }
 }

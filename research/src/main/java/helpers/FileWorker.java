@@ -12,8 +12,12 @@ public class FileWorker {
         return new File("./research/src/main/resources/" + file);
     }
 
-    public void write(String file, int[] array) {
-        try (var writer = new PrintWriter(getFile(file))) {
+    public void write(String fileName, int[] array) {
+        try {
+            var file = getFile(fileName);
+            if (!file.exists())
+                System.out.println(file.createNewFile());
+            var writer = new PrintWriter(file);
             IntStream
                     .range(0, array.length)
                     .forEach(i -> writer.print(array[i] + "\n"));
@@ -22,13 +26,12 @@ public class FileWorker {
         }
     }
 
-    public int[] read(String file, int length) {
+    public int[] read(String fileName, int length) {
         var array = new int[length];
         try {
-            var scanner = new Scanner(getFile(file));
-            var i = 0;
-            while (scanner.hasNext())
-                array[i++] = scanner.nextInt();
+            var scanner = new Scanner(getFile(fileName));
+            for (var i = 0; i < length; i++)
+                array[i] = scanner.nextInt();
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
