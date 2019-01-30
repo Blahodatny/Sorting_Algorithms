@@ -11,7 +11,7 @@ class Sort {
     private static final int SIZE = 1000000;
     private static final int QUANTITY = 6;
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         var fa = new FileWorker();
         int[] array;
         var timeCount = new double[QUANTITY];
