@@ -2,21 +2,27 @@ package recursion;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.Objects;
 
 class ShowFiles {
-    private static void printFileNames(String path) {
-        var files = new File(path).listFiles();
-        assert files != null;
-        Arrays.stream(files).forEach(f -> {
-            if (f.isDirectory()) {
-                System.out.println("Directory :  " + f.getName());
-                printFileNames(f.getPath());
-            } else
-                System.out.println("File :  " + f.getName());
-        });
+    private static void printFolder(String path) {
+        printFolder(path, "-");
+    }
+
+    private static void printFolder(String path, String separator) {
+        Arrays
+                .stream(Objects.requireNonNull(new File(path).listFiles()))
+                .forEach(item -> {
+                    System.out.print(separator);
+                    if (item.isDirectory()) {
+                        System.out.println("Directory:  " + item.getName());
+                        printFolder(item.getPath(), separator + "-");
+                    } else
+                        System.out.println("File:  " + item.getName());
+                });
     }
 
     public static void main(String[] args) {
-        printFileNames("/home/dima/Design_Patterns/patterns/data");
+        printFolder("./elementary/src/main/");
     }
 }
