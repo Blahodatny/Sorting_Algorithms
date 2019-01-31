@@ -8,6 +8,9 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 public class Analysis {
+    private static final int RANGE = 1_000_000;
+    private static final int START = 10_000;
+
     private static int[] fillRandom(int size, int range) {
         var array = new int[size];
         fillRandom(array, 0, range);
@@ -19,27 +22,30 @@ public class Analysis {
         Arrays.setAll(a, i -> random.nextInt(to - from + 1) + from);
     }
 
-    public static double[][] analyze(List<Consumer<int[]>> algorithms, int repeat, int size) {
+    private static int countSize(int repeat, int start) {
+        for (var i = 0; i < repeat; i++)
+            start = i == 0 ? start + 15000 : i == 3 ? start + 50000 : start * 2;
+        return start;
+    }
+
+    public static double[][] analyze(List<Consumer<int[]>> algorithms, int repeat) {
         var worker = new FileWorker();
         var average = new double[algorithms.size()][repeat];
         var time = new double[repeat][algorithms.size()][repeat];
 
-        var min = 10000;
         for (var i = 0; i < repeat; i++) {
-            worker.write("data" + i + ".txt", fillRandom(size, min));
+            var size = 10000;
+            worker.write("data" + i + ".txt", fillRandom(countSize(repeat, START), RANGE));
             for (var j = 0; j < repeat; j++) {
-                var array = worker.read("data" + i + ".txt", min);
+                var array = worker.read("data" + i + ".txt", size);
                 for (var k = 0; k < algorithms.size(); k++) {
                     var start = System.nanoTime();
-                    algorithms.get(k).accept(array);
-                    time[i][k][j] = (double) (System.nanoTime() - start) / 1000000000;
+                    algorithms.get(k).accept(array.clone());
+                    time[i][k][j] = (double) (System.nanoTime() - start) / 1_000_000_000;
                 }
-                min = i == 0 ? min + 15000 : i == 3 ? min + 50000 : min * 2;
+                size = i == 0 ? size + 15000 : i == 3 ? size + 50000 : size * 2;
             }
-            min = 10000;
         }
-
-        System.out.println(Arrays.deepToString(time));
 
         for (var i = 0; i < algorithms.size(); i++)
             for (var j = 0; j < repeat; j++) {
