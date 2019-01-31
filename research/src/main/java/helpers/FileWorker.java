@@ -30,8 +30,7 @@ public class FileWorker {
         var array = new int[length];
         try {
             var scanner = new Scanner(getFile(fileName));
-            for (var i = 0; i < length; i++)
-                array[i] = scanner.nextInt();
+            array = IntStream.range(0, length).map(i -> scanner.nextInt()).toArray();
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
