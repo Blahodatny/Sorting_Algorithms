@@ -7,15 +7,6 @@ import static mergesort.merge.Merge.merge;
 class BottomUpMergeSort {
     private final static int N = 20;
 
-    public static void main(String[] args) {
-        var arr = new int[N];
-        ArrayAssistant.fillRandom(arr, 100);
-        ArrayAssistant.print(arr, "Before merging");
-        bottomUpMergeSort(arr);
-        ArrayAssistant.print(arr, "After merging");
-    }
-
-    // Bottom-up merge sort
     private static void bottomUpMergeSort(int[] array) {
         var step = 1;
         while (step < array.length) {
@@ -29,5 +20,13 @@ class BottomUpMergeSort {
             }
             step = step * 2;
         }
+    }
+
+    public static void main(String[] args) {
+        var arr = new int[N];
+        ArrayAssistant.fillRandom(arr, 100);
+        ArrayAssistant.print(arr, "Before merging");
+        bottomUpMergeSort(arr);
+        ArrayAssistant.print(arr, "After merging");
     }
 }
