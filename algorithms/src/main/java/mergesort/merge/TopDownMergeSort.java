@@ -10,7 +10,6 @@ public class TopDownMergeSort {
     private static final int N = 15;
 
     public static void main(String[] args) {
-
         var arr = new int[N];
         ArrayAssistant.fillRandom(arr, 1000);
         ArrayAssistant.print(arr, "Before sorting");
