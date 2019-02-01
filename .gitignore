@@ -25,3 +25,4 @@ hs_err_pid*
 
 .idea/
 /research/src/main/resources/data*
+/out/production/research/data*
