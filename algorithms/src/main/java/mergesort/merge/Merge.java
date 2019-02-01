@@ -4,27 +4,13 @@ import java.util.stream.IntStream;
 
 class Merge {
     static void merge(int[] arr, int l, int m, int r) {
-        var n1 = m - l + 1;
-        var n2 = r - m;
+        var left = IntStream.range(0, m - l + 1).map(i -> arr[l + 1]).toArray();
+        var right = IntStream.range(0, r - m).map(i -> arr[m + i + 1]).toArray();
 
-        var leftArray = new int[n1];
-        int[] rightArray;
-
-        System.arraycopy(arr, l, leftArray, 0, leftArray.length);
-        rightArray = IntStream.range(0, n2).map(j -> arr[m + j + 1]).toArray();
-
-        for (int k = l, i = 0, j = 0; k <= r; k++) {
-            if (i == leftArray.length) {
-                arr[k] = rightArray[j++];
-                continue;
-            }
-
-            if (j == rightArray.length) {
-                arr[k] = leftArray[i++];
-                continue;
-            }
-
-            arr[k] = leftArray[i] <= rightArray[j] ? leftArray[i++] : rightArray[j++];
-        }
+        for (int k = l, i = 0, j = 0; k <= r; k++)
+            arr[k] = i == left.length ?
+                    right[j++] : j == right.length ?
+                    left[i++] : left[i] <= right[j] ?
+                    left[i++] : right[j++];
     }
 }
