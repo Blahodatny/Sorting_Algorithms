@@ -18,11 +18,11 @@ public class StudentList {
     public static Node remove(Node head, Student value) {
         if (head == null) return null;
         var tail = head;
-        while (tail.item != value) {
+        while (tail != null && tail.item != value)
             tail = tail.next;
-            if (tail == null)
-                return null;
-        }
+
+        if (tail == null)
+            return null;
 
         if (tail.prev != null)
             tail.prev.next = tail.next;
