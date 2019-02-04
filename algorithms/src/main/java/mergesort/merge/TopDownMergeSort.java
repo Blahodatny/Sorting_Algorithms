@@ -6,32 +6,16 @@ import java.util.Arrays;
 
 import static mergesort.merge.Merge.merge;
 
-public class TopDownMergeSort {
+class TopDownMergeSort {
     private static final int N = 15;
-
-    public static void main(String[] args) {
-        var arr = new int[N];
-        ArrayAssistant.fillRandom(arr, 1000);
-        ArrayAssistant.print(arr, "Before sorting");
-
-        mergeSort1(arr);
-        ArrayAssistant.print(arr, "After sorting");
-        System.out.println(System.lineSeparator());
-
-        ArrayAssistant.fillRandom(arr, 1000);
-        ArrayAssistant.print(arr, "Before sorting");
-        arr = mergeSort2(arr);
-        ArrayAssistant.print(arr, "After sorting");
-
-    }
 
     private static void mergeSort1(int a[]) {
         mergeSort(a, 0, a.length - 1);
     }
 
-    public static void mergeSort(int a[], int l, int r) {
+    private static void mergeSort(int a[], int l, int r) {
         if (l < r) {
-            var m = (l + r) / 2;
+            var m = l + (r - l) / 2;
             mergeSort(a, l, m);
             mergeSort(a, m + 1, r);
             merge(a, l, m, r);
@@ -58,5 +42,20 @@ public class TopDownMergeSort {
         System.arraycopy(leftArray, iLeft, result, iResult, leftArray.length - iLeft);
         System.arraycopy(rightArray, iRight, result, iResult, rightArray.length - iRight);
         return result;
+    }
+
+    public static void main(String[] args) {
+        var arr = new int[N];
+        ArrayAssistant.fillRandom(arr, 1000);
+        ArrayAssistant.print(arr, "Before sorting");
+
+        mergeSort1(arr);
+        ArrayAssistant.print(arr, "After sorting");
+        System.out.println(System.lineSeparator());
+
+        ArrayAssistant.fillRandom(arr, 1000);
+        ArrayAssistant.print(arr, "Before sorting");
+        arr = mergeSort2(arr);
+        ArrayAssistant.print(arr, "After sorting");
     }
 }
