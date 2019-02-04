@@ -1,5 +1,7 @@
 package student;
 
+import java.util.Objects;
+
 public class StudentList {
     public static Node addFirst(Node head, Student value) {
         final var newNode = new Node(null, value, head);
