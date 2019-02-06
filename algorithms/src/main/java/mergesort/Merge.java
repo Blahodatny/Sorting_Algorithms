@@ -55,8 +55,6 @@ class Merge {
         Arrays.sort(arr2);
         ArrayAssistant.print(arr2, "Array2 before merging");
 
-        System.out.println(System.lineSeparator());
-
         ArrayAssistant.print(
                 abstractInPlaceMerge(arr1, arr2),
                 "After abstract-in-place merging arr1 and arr2"
