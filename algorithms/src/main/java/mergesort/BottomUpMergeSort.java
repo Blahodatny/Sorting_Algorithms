@@ -2,9 +2,8 @@ package mergesort;
 
 import assistant.ArrayAssistant;
 
-
 class BottomUpMergeSort {
-    private static void bottomUpMergeSort(int[] array) {
+    private static void mergeSort(int[] array) {
         var step = 1;
         while (step < array.length) {
             var l = 0;
@@ -24,7 +23,7 @@ class BottomUpMergeSort {
         var arr = new int[20];
         ArrayAssistant.fillRandom(arr, 100);
         ArrayAssistant.print(arr, "Before merging");
-        bottomUpMergeSort(arr);
+        mergeSort(arr);
         ArrayAssistant.print(arr, "After merging");
     }
 }

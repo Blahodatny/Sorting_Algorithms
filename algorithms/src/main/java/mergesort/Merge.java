@@ -1,5 +1,8 @@
 package mergesort;
 
+import assistant.ArrayAssistant;
+
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 class Merge {
@@ -23,7 +26,7 @@ class Merge {
         return result;
     }
 
-    static int[] abstractInPlaceMerge(int[] left, int[] right) {
+    private static int[] abstractInPlaceMerge(int[] left, int[] right) {
         var aux = new int[left.length + right.length];
         var a = new int[left.length + right.length];
 
@@ -39,5 +42,24 @@ class Merge {
         for (k = 0; k < aux.length; k++)
             a[k] = aux[j] < aux[i] ? aux[j--] : aux[i++];
         return a;
+    }
+
+    public static void main(String[] args) {
+        var arr1 = new int[12];
+        ArrayAssistant.fillRandom(arr1, 100);
+        Arrays.sort(arr1);
+        ArrayAssistant.print(arr1, "Array1 before merging");
+
+        var arr2 = new int[7];
+        ArrayAssistant.fillRandom(arr2, 100);
+        Arrays.sort(arr2);
+        ArrayAssistant.print(arr2, "Array2 before merging");
+
+        System.out.println(System.lineSeparator());
+
+        ArrayAssistant.print(
+                abstractInPlaceMerge(arr1, arr2),
+                "After abstract-in-place merging arr1 and arr2"
+        );
     }
 }

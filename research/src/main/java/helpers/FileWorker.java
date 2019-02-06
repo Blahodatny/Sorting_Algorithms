@@ -18,9 +18,7 @@ public class FileWorker {
             if (!file.exists())
                 System.out.println(file.createNewFile());
             var writer = new PrintWriter(file);
-            IntStream
-                    .range(0, array.length)
-                    .forEach(i -> writer.print(array[i] + "\n"));
+            IntStream.range(0, array.length).forEach(i -> writer.print(array[i] + "\n"));
         } catch (IOException e) {
             e.printStackTrace();
         }
