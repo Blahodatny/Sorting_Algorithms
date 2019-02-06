@@ -8,9 +8,9 @@ class Merge {
         var right = IntStream.range(0, r - m).map(i -> arr[m + i + 1]).toArray();
 
         for (int k = l, i = 0, j = 0; k <= r; k++)
-            arr[k] = i == left.length ?
-                    right[j++] : j == right.length ?
-                    left[i++] : left[i] <= right[j] ?
-                    left[i++] : right[j++];
+            arr[k] = i == left.length ? right[j++] :
+                    j == right.length ? left[i++] :
+                            left[i] <= right[j] ? left[i++] :
+                                    right[j++];
     }
 }

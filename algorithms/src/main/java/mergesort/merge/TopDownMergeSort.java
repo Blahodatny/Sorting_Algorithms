@@ -45,8 +45,8 @@ class TopDownMergeSort {
     }
 
     public static void main(String[] args) {
-        var arr = new int[N];
-        ArrayAssistant.fillRandom(arr, 1000);
+        var arr = new int[]{38, 27, 43, 3, 9, 82, 10};
+//        ArrayAssistant.fillRandom(arr, 1000);
         ArrayAssistant.print(arr, "Before sorting");
 
         mergeSort1(arr);
