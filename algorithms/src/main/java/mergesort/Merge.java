@@ -15,9 +15,13 @@ class Merge {
     }
 
     static void merge(int[] arr, int l, int m, int r) {
-        var left = IntStream.rangeClosed(0, m - l).map(i -> arr[l + i]).toArray();
-        var right = IntStream.range(0, r - m).map(i -> arr[m + i + 1]).toArray();
-        merge(arr, left, right, l, r);
+        merge(
+                arr,
+                IntStream.rangeClosed(0, m - l).map(i -> arr[l + i]).toArray(),
+                IntStream.range(0, r - m).map(i -> arr[m + i + 1]).toArray(),
+                l,
+                r
+        );
     }
 
     static int[] merge(int[] left, int[] right) {
