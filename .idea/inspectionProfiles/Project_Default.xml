@@ -1,0 +1,15 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="ConstantConditions" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="true" />
+      <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
+    </inspection_tool>
+    <inspection_tool class="Convert2streamapi" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="REPLACE_TRIVIAL_FOREACH" value="true" />
+      <option name="SUGGEST_FOREACH" value="true" />
+    </inspection_tool>
+    <inspection_tool class="RedundantExplicitVariableType" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SingleStatementInBlock" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>
