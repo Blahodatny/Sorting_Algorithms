@@ -13,4 +13,5 @@ jobs:
         - java -classpath out/production/elementary Main
     - script:
         - javac -classpath research/src/main/java -d out/production/research research/src/main/java/Main.java
+        - mkdir research/src/main/resources
         - java -classpath out/production/research Main
