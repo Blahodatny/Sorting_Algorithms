@@ -12,11 +12,9 @@ public class CSV {
         BufferedReader reader = null;
         List<String[]> list;
         try {
-            reader = new BufferedReader(
-                    new InputStreamReader(
-                            getClass().getResourceAsStream("/" + file)
-                    )
-            );
+            reader = new BufferedReader(new InputStreamReader(
+                    getClass().getResourceAsStream("/" + file)
+            ));
             list = reader
                     .lines()
                     .map(line -> line.split("\\s*,\\s*"))

@@ -13,5 +13,4 @@ jobs:
         - java -classpath out/production/elementary Main
     - script:
         - javac -classpath research/src/main/java -d out/production/research research/src/main/java/Main.java
-        - cp -a research/src/main/resources/. out/production/research
         - java -classpath out/production/research Main
