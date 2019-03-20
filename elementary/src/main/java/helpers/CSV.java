@@ -13,7 +13,9 @@ public class CSV {
         List<String[]> list;
         try {
             reader = new BufferedReader(
-                    new InputStreamReader(getClass().getResourceAsStream("/" + file))
+                    new InputStreamReader(
+                            getClass().getResourceAsStream("/" + file)
+                    )
             );
             list = reader
                     .lines()

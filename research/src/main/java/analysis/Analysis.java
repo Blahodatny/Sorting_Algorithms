@@ -35,7 +35,9 @@ public class Analysis {
 
         for (var i = 0; i < repeat; i++) {
             var size = 10000;
-            worker.write("data" + i + ".txt", fillRandom(countSize(repeat, START), RANGE));
+            worker.write(
+                    "data" + i + ".txt", fillRandom(countSize(repeat, START), RANGE)
+            );
             for (var j = 0; j < repeat; j++) {
                 var array = worker.read("data" + i + ".txt", size);
                 for (var k = 0; k < algorithms.size(); k++) {

@@ -25,10 +25,10 @@ public class Student {
     }
 
     private static boolean isValidName(String string) {
-        return Character.isUpperCase(string.charAt(0))
-                && IntStream
-                .range(1, string.length())
-                .allMatch(i -> Character.isAlphabetic(string.charAt(i)));
+        return Character.isUpperCase(string.charAt(0)) &&
+                IntStream
+                        .range(1, string.length())
+                        .allMatch(i -> Character.isAlphabetic(string.charAt(i)));
     }
 
     private static boolean isValidForm(String form) {
@@ -49,10 +49,9 @@ public class Student {
                     return 1;
                 else if (temp1[pos] > temp2[pos])
                     return -1;
-                else if (++pos == temp1.length
-                        && pos == temp2.length
-                        && temp1 == surname.toCharArray()
-                ) {
+                else if (++pos == temp1.length &&
+                        pos == temp2.length &&
+                        temp1 == surname.toCharArray()) {
                     temp1 = name.toCharArray();
                     temp2 = student.name.toCharArray();
                     pos = 0;

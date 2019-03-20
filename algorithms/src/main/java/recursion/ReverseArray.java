@@ -12,7 +12,9 @@ class ReverseArray {
     private static void reverse(int[] array, Method m) {
         switch (m) {
             case Iterative:
-                for (int i = 0, mid = array.length >> 1, j = array.length - 1; i < mid; i++, j--)
+                for (int i = 0, mid = array.length >> 1, j = array.length - 1;
+                     i < mid;
+                     i++, j--)
                     ArrayAssistant.swap(array, i, j);
                 break;
             case Recursive:

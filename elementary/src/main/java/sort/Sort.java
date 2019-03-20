@@ -23,7 +23,9 @@ public class Sort {
         var temp = head;
         Node sortedList = null;
         while (head != null) {
-            for (var current = head.getNext(); current != null; current = current.getNext())
+            for (var current = head.getNext();
+                 current != null;
+                 current = current.getNext())
                 if (current.getItem().compare(temp.getItem()) == 1)
                     temp = current;
             var node = temp.getItem();
