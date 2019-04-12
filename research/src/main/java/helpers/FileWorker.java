@@ -18,7 +18,8 @@ public class FileWorker {
             if (!file.exists())
                 System.out.println(file.createNewFile());
             var writer = new PrintWriter(file);
-            IntStream.range(0, array.length).forEach(i -> writer.print(array[i] + "\n"));
+            IntStream.range(0, array.length)
+                    .forEach(i -> writer.print(array[i] + "\n"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -28,7 +29,9 @@ public class FileWorker {
         var array = new int[length];
         try {
             var scanner = new Scanner(getFile(fileName));
-            array = IntStream.range(0, length).map(i -> scanner.nextInt()).toArray();
+            array = IntStream.range(0, length)
+                    .map(i -> scanner.nextInt())
+                    .toArray();
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

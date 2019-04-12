@@ -19,7 +19,10 @@ public class Helper {
 
     public static Node convertToStudentList(List<String[]> list) {
         var head = new Node(null, new Student(list.remove(0)), null);
-        list.forEach(strings -> StudentList.addAfter(head, new Student(strings)));
+        list.forEach(strings -> StudentList.addAfter(
+                head,
+                new Student(strings)
+        ));
         return head;
     }
 

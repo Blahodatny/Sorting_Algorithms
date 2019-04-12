@@ -10,8 +10,7 @@ class ShowFiles {
     }
 
     private static void printFolder(String path, String separator) {
-        Arrays
-                .stream(Objects.requireNonNull(new File(path).listFiles()))
+        Arrays.stream(Objects.requireNonNull(new File(path).listFiles()))
                 .forEach(item -> {
                     System.out.print(separator);
                     if (item.isDirectory()) {
@@ -22,7 +21,7 @@ class ShowFiles {
                 });
     }
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
         printFolder("./elementary/src/main/");
     }
 }

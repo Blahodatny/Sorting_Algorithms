@@ -19,7 +19,8 @@ public class Sort {
     }
 
     public static Node insertion(Node head) {
-        if (head == null) return null;
+        if (head == null)
+            return null;
         var temp = head;
         Node sortedList = null;
         while (head != null) {

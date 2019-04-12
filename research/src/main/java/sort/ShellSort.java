@@ -14,8 +14,7 @@ public class ShellSort {
     }
 
     public static void classic(int[] array) {
-        IntStream
-                .iterate(array.length / 2, gap -> gap > 0, gap -> gap / 2)
+        IntStream.iterate(array.length / 2, gap -> gap > 0, gap -> gap / 2)
                 .forEach(gap -> sort(array, gap));
     }
 
@@ -24,6 +23,7 @@ public class ShellSort {
         while (gap < array.length / 3)
             gap = 3 * gap + 1;
 
-        IntStream.iterate(gap, i -> i > 0, i -> i / 3).forEach(i -> sort(array, i));
+        IntStream.iterate(gap, i -> i > 0, i -> i / 3)
+                .forEach(i -> sort(array, i));
     }
 }

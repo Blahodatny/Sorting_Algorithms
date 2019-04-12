@@ -13,22 +13,25 @@ public class Student {
     public Student(String[] info) {
         if (info.length < getClass().getDeclaredFields().length)
             throw new IllegalArgumentException(
-                    "The line  \"" + Arrays.toString(info) + "\" not completed"
-            );
+                    "The line  \"" + Arrays.toString(info) +
+                            "\" not completed");
 
-        if (isValidName(info[0]) && isValidName(info[1]) && isValidForm(info[2])) {
+        if (isValidName(info[0]) && isValidName(info[1]) &&
+                isValidForm(info[2])) {
             name = info[0];
             surname = info[1];
             form = info[2];
         } else
-            throw new IllegalArgumentException("Some of parameters is not valid");
+            throw new IllegalArgumentException("Some of parameters is not " +
+                    "valid");
     }
 
     private static boolean isValidName(String string) {
         return Character.isUpperCase(string.charAt(0)) &&
-                IntStream
-                        .range(1, string.length())
-                        .allMatch(i -> Character.isAlphabetic(string.charAt(i)));
+                IntStream.range(1, string.length())
+                        .allMatch(i ->
+                                Character.isAlphabetic(string.charAt(i))
+                        );
     }
 
     private static boolean isValidForm(String form) {
@@ -49,9 +52,8 @@ public class Student {
                     return 1;
                 else if (temp1[pos] > temp2[pos])
                     return -1;
-                else if (++pos == temp1.length &&
-                        pos == temp2.length &&
-                        temp1 == surname.toCharArray()) {
+                else if (++pos == temp1.length && pos == temp2.length &&
+                        Arrays.equals(temp1, surname.toCharArray())) {
                     temp1 = name.toCharArray();
                     temp2 = student.name.toCharArray();
                     pos = 0;
@@ -61,8 +63,10 @@ public class Student {
     }
 
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Student)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Student))
+            return false;
         var student = (Student) o;
         return name.equals(student.name) &&
                 surname.equals(student.surname) &&

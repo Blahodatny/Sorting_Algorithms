@@ -28,7 +28,8 @@ public class Analysis {
         return start;
     }
 
-    public static double[][] analyze(List<Consumer<int[]>> algorithms, int repeat) {
+    public static double[][] analyze(List<Consumer<int[]>> algorithms,
+            int repeat) {
         var worker = new FileWorker();
         var average = new double[algorithms.size()][repeat];
         var time = new double[repeat][algorithms.size()][repeat];
@@ -36,14 +37,16 @@ public class Analysis {
         for (var i = 0; i < repeat; i++) {
             var size = 10000;
             worker.write(
-                    "data" + i + ".txt", fillRandom(countSize(repeat, START), RANGE)
+                    "data" + i + ".txt",
+                    fillRandom(countSize(repeat, START), RANGE)
             );
             for (var j = 0; j < repeat; j++) {
                 var array = worker.read("data" + i + ".txt", size);
                 for (var k = 0; k < algorithms.size(); k++) {
                     var start = System.nanoTime();
                     algorithms.get(k).accept(array.clone());
-                    time[i][k][j] = (double) (System.nanoTime() - start) / 1_000_000_000;
+                    time[i][k][j] = (double) (System.nanoTime() - start) /
+                            1_000_000_000;
                 }
                 size = i == 0 ? size + 15000 : i == 3 ? size + 50000 : size * 2;
             }

@@ -15,8 +15,7 @@ public class CSV {
             reader = new BufferedReader(new InputStreamReader(
                     getClass().getResourceAsStream("/" + file)
             ));
-            list = reader
-                    .lines()
+            list = reader.lines()
                     .map(line -> line.split("\\s*,\\s*"))
                     .collect(Collectors.toList());
         } finally {

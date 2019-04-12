@@ -22,8 +22,10 @@ public class Node {
     }
 
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Node)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Node))
+            return false;
         var node = (Node) o;
         return getItem().equals(node.getItem()) &&
                 getNext().equals(node.getNext()) &&

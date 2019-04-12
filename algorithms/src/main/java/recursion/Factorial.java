@@ -8,8 +8,7 @@ class Factorial {
     }
 
     public static void main(String[] args) {
-        IntStream
-                .rangeClosed(0, 10)
+        IntStream.rangeClosed(0, 10)
                 .forEach(n -> System.out.printf("%n%2d!  =  %d", n, fact(n)));
     }
 }

@@ -6,12 +6,14 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 class Merge {
-    private static void merge(int[] result, int[] left, int[] right, int start, int end) {
+    private static void merge(int[] result, int[] left, int[] right, int start,
+            int end) {
         for (int i = 0, j = 0, k = start; k <= end; k++)
-            result[k] = i == left.length ? right[j++] :
-                    j == right.length ? left[i++] :
-                            left[i] <= right[j] ? left[i++] :
-                                    right[j++];
+            result[k] = i == left.length ?
+                    right[j++] :
+                    j == right.length ?
+                            left[i++] :
+                            left[i] <= right[j] ? left[i++] : right[j++];
     }
 
     static void merge(int[] arr, int l, int m, int r) {
